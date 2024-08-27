@@ -1,6 +1,18 @@
 
 on: 
     workflow_call: 
+      secrets:
+        key1:
+          description: 'test value for key1'
+          required: true
+        key2:
+          description: 'test value for key2'
+          required: true
+      inputs:
+        input1:
+          required: true
+          type: string
+          default: 'yedokati'
 
 jobs:        
     first_job:
@@ -11,6 +23,9 @@ jobs:
 
             - name: First Step
               run: echo "My First Example ${{ env.var1 }}"
+            
+            - name: Use called workflow secrets
+              run: echo "${{ secrets.key1 }}"
 
-            - name: Use Secrets
-              run: echo "${{ env.var2 }}"
+            - name: Print Inputs
+              run: echo ${{ inputs.input1 }}

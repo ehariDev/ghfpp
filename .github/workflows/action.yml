@@ -9,20 +9,16 @@ env:
 jobs:
     first_job:
       uses: ./.github/workflows/reusable-workflow.yml
+      secrets:
+        key1: 'bokkale'
+        key2: 'thokkale'
+    
     
     Second_job:
       concurrency: 
         group: yemo
         cancel-in-progress: true
       needs: first_job
-      runs-on: ubuntu-latest
-      steps:
-          - name: Source Code CheckOut
-            uses: actions/checkout@v4
-
-          - name: First Step
-            env:
-              var2: heddala2.stepvalue
-            run: echo "My First Example $var2"
-
+      uses: ./.github/workflows/reusable-workflow.yml
+      secrets: inherit
     
