@@ -10,7 +10,6 @@ on:
           required: true
       inputs:
         input1:
-          required: true
           type: string
           default: 'yedokati'
 
