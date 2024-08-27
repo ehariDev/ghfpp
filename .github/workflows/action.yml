@@ -12,6 +12,8 @@ jobs:
       secrets:
         key1: $var1
         key2: $var2
+      with:
+        input1: ${{ vars.var1 }}
     
     
     Second_job:

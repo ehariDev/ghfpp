@@ -10,8 +10,8 @@ on:
           required: true
       inputs:
         input1:
+          required: true
           type: string
-          default: 'yedokati'
 
 jobs:        
     first_job:
