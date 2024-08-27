@@ -34,4 +34,7 @@ jobs:
             env:
               var2: heddala2.stepvalue
             run: echo "My First Example $var2"
+
+          - name: Sleep Task
+            run: sleep 600s
     
