@@ -10,8 +10,8 @@ jobs:
     first_job:
       uses: ./.github/workflows/reusable-workflow.yml
       secrets:
-        key1: 'bokkale'
-        key2: 'thokkale'
+        key1: $var1
+        key2: $var2
     
     
     Second_job:
@@ -20,5 +20,6 @@ jobs:
         cancel-in-progress: true
       needs: first_job
       uses: ./.github/workflows/reusable-workflow.yml
-      secrets: inherit
-    
+      secrets:
+        key1: $var1
+        key2: $var2
