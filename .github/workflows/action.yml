@@ -7,6 +7,17 @@ env:
   var2: heddala2
 
 jobs:
+    environment_vars:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Create New Env Var
+          run: |
+            echo "envvar1=var10" >> $GITHUB_ENV
+        
+        - name: Print Env
+          run: 
+            echo "$envvar1"
+
     first_job:
       uses: ./.github/workflows/reusable-workflow.yml
       secrets:

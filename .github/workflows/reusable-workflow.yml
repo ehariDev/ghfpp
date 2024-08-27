@@ -12,9 +12,12 @@ on:
         input1:
           required: true
           type: string
-
+      outputs:
+        output1:
+          description: 'outputvalue'
+          value: yo_yo_job.steps.
 jobs:        
-    first_job:
+    yo_yo_job:
         runs-on: ubuntu-latest
         steps:
             - name: Source Code CheckOut
