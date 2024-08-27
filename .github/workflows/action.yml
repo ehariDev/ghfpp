@@ -9,16 +9,7 @@ env:
 
 jobs:
     first_job:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Source Code CheckOut
-              uses: actions/checkout@v4
-
-            - name: First Step
-              run: echo "My First Example ${{ env.var1 }}"
-
-            - name: Use Secrets
-              run: echo "${{ secrets.GITHUB_TOKEN }}"
+      uses: ./.github/workflows/reusable-workflow.yml
     
     Second_job:
       concurrency: 
