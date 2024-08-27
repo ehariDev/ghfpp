@@ -1,7 +1,6 @@
 name: My First Workflow 
 
-on: 
-  workflow_dispatch
+on: [push, workflow_dispatch]
 
 env:
   var1: heddala
@@ -26,6 +25,4 @@ jobs:
               var2: heddala2.stepvalue
             run: echo "My First Example $var2"
 
-          - name: Sleep Task
-            run: sleep 600s
     
