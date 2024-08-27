@@ -11,3 +11,23 @@ jobs:
 
             - name: First Step
               run: echo "My First Example"
+    
+    Second_job:
+      needs: first_job
+      runs-on: ubuntu-latest
+      steps:
+          - name: Source Code CheckOut
+            uses: actions/checkout@v4
+
+          - name: First Step
+            run: echo "My First Example"
+    
+    third_job:
+      needs: first_job
+      runs-on: macos-latest
+      steps:
+          - name: Source Code CheckOut
+            uses: actions/checkout@v4
+
+          - name: First Step
+            run: echo "My First Example"
