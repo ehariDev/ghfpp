@@ -6,5 +6,8 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
+            - name: Source Code CheckOut
+              uses: actions/checkout@v4
+
             - name: First Step
               run: echo "My First Example"
