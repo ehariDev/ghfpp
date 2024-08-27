@@ -21,6 +21,9 @@ jobs:
               run: echo "${{ secrets.GITHUB_TOKEN }}"
     
     Second_job:
+      concurrency: 
+        group: yemo
+        cancel-in-progress: true
       needs: first_job
       runs-on: ubuntu-latest
       steps:
