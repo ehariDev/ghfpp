@@ -1,0 +1,29 @@
+name: Trigger Inputs
+
+on: 
+    workflow_dispatch:
+        inputs:
+            run-tests:
+                description: 'what to run'
+                required: true
+                type: boolean
+            test-type:
+                description: 'test-type specify'
+                required: false
+                type: string
+            input3:
+                required: true
+                type: choice
+                options:
+                    - test
+                    - realtest
+
+jobs:
+  job_1:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Print all Inputs
+          run: |
+            echo "${{ inputs.runtests }}"
+            echo "${{ inputs.test-type }}"
+            echo "${{ inputs.input3 }}"
